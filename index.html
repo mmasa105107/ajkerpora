@@ -1,0 +1,188 @@
+<!DOCTYPE html>
+<html lang="bn">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>আজকের পড়া - স্টাডি পোর্টাল</title>
+    <style>
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+        body {
+            background-color: #f0f4f8;
+            color: #333;
+            padding: 20px;
+        }
+        .container {
+            max-width: 1100px;
+            margin: 0 auto;
+        }
+        /* হেডার সেকশন */
+        .header {
+            text-align: center;
+            margin-bottom: 40px;
+            background: linear-gradient(135deg, #0066cc, #004080);
+            color: white;
+            padding: 30px;
+            border-radius: 12px;
+            box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+        }
+        .header h1 {
+            font-size: 2.2rem;
+            margin-bottom: 10px;
+        }
+        .header p {
+            font-size: 1.1rem;
+            opacity: 0.9;
+        }
+        
+        /* ৮টি বিষয়ের গ্রিড লেআউট */
+        .subjects-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+            gap: 20px;
+            margin-bottom: 30px;
+        }
+        
+        /* প্রতিটি বিষয়ের কার্ড */
+        .subject-card {
+            background: white;
+            padding: 25px 20px;
+            border-radius: 10px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05);
+            text-align: center;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            border-top: 4px solid #0066cc;
+        }
+        .subject-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 8px 15px rgba(0, 0, 0, 0.1);
+        }
+        .subject-card h3 {
+            font-size: 1.3rem;
+            color: #222;
+            margin-bottom: 10px;
+        }
+        .subject-card p {
+            font-size: 0.9rem;
+            color: #666;
+            margin-bottom: 20px;
+        }
+        
+        /* নোটস দেখার বাটন */
+        .note-btn {
+            display: inline-block;
+            background-color: #28a745;
+            color: white;
+            padding: 8px 16px;
+            text-decoration: none;
+            border-radius: 5px;
+            font-size: 0.95rem;
+            font-weight: 600;
+            transition: background-color 0.2s;
+        }
+        .note-btn:hover {
+            background-color: #218838;
+        }
+
+        /* হোম পেজে ফেরার নেভিগেশন */
+        .back-nav {
+            text-align: center;
+            margin-top: 40px;
+        }
+        .back-btn {
+            display: inline-block;
+            background-color: #6c757d;
+            color: white;
+            padding: 10px 25px;
+            text-decoration: none;
+            border-radius: 6px;
+            font-size: 1rem;
+            transition: background-color 0.2s;
+        }
+        .back-btn:hover {
+            background-color: #5a6268;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="container">
+        <!-- হেডার -->
+        <div class="header">
+            <h1>📚 আজকের পড়া</h1>
+            <p>আপনার প্রতিদিনের বিষয়ভিত্তিক নোট ও পড়াশোনার আপডেট এক নজরে</p>
+        </div>
+
+        <!-- ৮টি বিষয়ের কার্ড সেকশন -->
+        <div class="subjects-grid">
+            
+            <!-- বিষয় ১ -->
+            <div class="subject-card">
+                <h3>বাংলা ১ম পত্র</h3>
+                <p>গল্প, কবিতা ও সহপাঠের গুরুত্বপূর্ণ সারসংক্ষেপ।</p>
+                <a href="#note-modal" class="note-btn">নোটস দেখুন</a>
+            </div>
+
+            <!-- বিষয় ২ -->
+            <div class="subject-card">
+                <h3>বাংলা ২য় পত্র</h3>
+                <p>ব্যাকরণ অংশ, নির্মিতি ও নির্মিতির নিয়মাবলি।</p>
+                <a href="#note-modal" class="note-btn">নোটস দেখুন</a>
+            </div>
+
+            <!-- বিষয় ৩ -->
+            <div class="subject-card">
+                <h3>ইংরেজি ১ম পত্র</h3>
+                <p>Seen/Unseen passage এবং vocabulary নোটস।</p>
+                <a href="#note-modal" class="note-btn">নোটস দেখুন</a>
+            </div>
+
+            <!-- বিষয় ৪ -->
+            <div class="subject-card">
+                <h3>ইংরেজি ২য় পত্র</h3>
+                <p>Grammar rules, Right forms of verbs & Writing.</p>
+                <a href="#note-modal" class="note-btn">নোটস দেখুন</a>
+            </div>
+
+            <!-- বিষয় ৫ -->
+            <div class="subject-card">
+                <h3>তথ্য ও যোগাযোগ প্রযুক্তি</h3>
+                <p>অধ্যায়ভিত্তিক মূল পয়েন্ট ও সিকিউ (CQ) প্রশ্ন।</p>
+                <a href="#note-modal" class="note-btn">নোটস দেখুন</a>
+            </div>
+
+            <!-- বিষয় ৬ -->
+            <div class="subject-card">
+                <h3>পদার্থবিজ্ঞান</h3>
+                <p>গাণিতিক সূত্রাবলি, অনুধাবনমূলক ও সৃজনশীল নোট।</p>
+                <a href="#note-modal" class="note-btn">নোটস দেখুন</a>
+            </div>
+
+            <!-- বিষয় ৭ -->
+            <div class="subject-card">
+                <h3>রসায়ন</h3>
+                <p>মৌলিক বিক্রিয়া, সমীকরণ ও গুরুত্বপূর্ণ টপিক।</p>
+                <a href="#note-modal" class="note-btn">নোটস দেখুন</a>
+            </div>
+
+            <!-- বিষয় ৮ -->
+            <div class="subject-card">
+                <h3>উচ্চতর গণিত / জীববিজ্ঞান</h3>
+                <p>গুরুত্বপূর্ণ উপপাদ্য, চিত্র ও সংক্ষিপ্ত প্রশ্ন।</p>
+                <a href="#note-modal" class="note-btn">নোটস দেখুন</a>
+            </div>
+
+        </div>
+
+        <!-- হোম পেজে ফেরার বাটন -->
+        <div class="back-nav">
+            <a href="index.html" class="back-btn">⬅ হোম পেজে ফিরে যান</a>
+        </div>
+    </div>
+
+</body>
+</html>
